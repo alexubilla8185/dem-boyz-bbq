@@ -15,16 +15,31 @@ export const FacebookIcon = () => (
 );
 
 export const MenuIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={2}>
+        <defs>
+            <linearGradient id="fire-gradient-icon" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#FF8C00" />
+                <stop offset="50%" stopColor="#D62929" />
+                <stop offset="100%" stopColor="#FFEB3B" />
+            </linearGradient>
+        </defs>
+        <path stroke="url(#fire-gradient-icon)" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
     </svg>
 );
 
 export const CloseIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={2}>
+        <defs>
+            <linearGradient id="fire-gradient-icon" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#FF8C00" />
+                <stop offset="50%" stopColor="#D62929" />
+                <stop offset="100%" stopColor="#FFEB3B" />
+            </linearGradient>
+        </defs>
+        <path stroke="url(#fire-gradient-icon)" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
 );
+
 
 export const PhoneIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">

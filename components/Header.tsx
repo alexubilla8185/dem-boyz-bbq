@@ -25,10 +25,10 @@ export const Header = () => {
     return (
         <header className={`relative sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
+                <div className="flex items-center justify-between h-16 md:h-20">
                     <a href="#" className="flex-shrink-0">
                         <div className="p-[2px] bg-fire-gradient rounded-full">
-                            <img className="h-16 w-16 rounded-full object-cover" src={logoUrl} alt="Dem Boyz BBQ" />
+                            <img className="h-12 w-12 md:h-16 md:w-16 rounded-full object-cover" src={logoUrl} alt="Dem Boyz BBQ" />
                         </div>
                     </a>
                     <div className="hidden md:flex md:items-center md:space-x-8">
