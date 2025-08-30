@@ -16,10 +16,10 @@ export const Footer = () => (
                     <p className="text-neutral-200">Southern Grillin' with an Island Twist</p>
                     <div className="flex space-x-4 mt-4">
                         <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-white p-2 rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 transition-transform hover:scale-110 duration-300">
-                            <InstagramIcon />
+                            <InstagramIcon className="h-5 w-5 md:h-6 md:w-6" />
                         </a>
                         <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-white p-2 rounded-full bg-blue-600 transition-transform hover:scale-110 duration-300">
-                            <FacebookIcon />
+                            <FacebookIcon className="h-5 w-5 md:h-6 md:w-6" />
                         </a>
                     </div>
                 </div>

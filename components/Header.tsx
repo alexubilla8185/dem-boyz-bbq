@@ -1,19 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { socialLinks, logoUrl } from '../data.ts';
-import { InstagramIcon, FacebookIcon, MenuIcon, CloseIcon } from './Icons.tsx';
+import { InstagramIcon, FacebookIcon, MenuIcon, CloseIcon, ShareIcon } from './Icons.tsx';
 import { handleSmoothScroll } from '../utils/helpers.ts';
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isShareSupported, setIsShareSupported] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
         };
         window.addEventListener('scroll', handleScroll);
+        
+        if (navigator.share) {
+            setIsShareSupported(true);
+        }
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const handleShare = async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: "Dem Boyz BBQ | Southern Grillin' with an Island Twist",
+                    text: "Check out Dem Boyz BBQ! View the menu, find their location, and inquire about catering.",
+                    url: window.location.origin
+                });
+            } catch (error) {
+                console.error('Share failed:', error);
+            }
+        }
+    };
 
     const navLinks = [
         { href: '#menu', label: 'Menu' },
@@ -37,10 +57,20 @@ export const Header = () => {
                         ))}
                     </div>
                     <div className="hidden md:flex items-center space-x-4">
-                        <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-white p-2 rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 transition-transform hover:scale-110 duration-300">
+                         {isShareSupported && (
+                            <button
+                                onClick={handleShare}
+                                type="button"
+                                aria-label="Share this page"
+                                className="h-10 w-10 flex items-center justify-center transition-transform hover:scale-110 duration-300"
+                            >
+                                <ShareIcon />
+                            </button>
+                        )}
+                        <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="h-10 w-10 flex items-center justify-center text-white rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 transition-transform hover:scale-110 duration-300">
                             <InstagramIcon />
                         </a>
-                        <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-white p-2 rounded-full bg-blue-600 transition-transform hover:scale-110 duration-300">
+                        <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="h-10 w-10 flex items-center justify-center text-white rounded-full bg-blue-600 transition-transform hover:scale-110 duration-300">
                             <FacebookIcon />
                         </a>
                     </div>
@@ -55,9 +85,14 @@ export const Header = () => {
                 <div className="md:hidden bg-black/90 backdrop-blur-sm">
                     <div className="px-4 pt-4 pb-5 space-y-3 sm:px-6 flex flex-col items-center">
                         {navLinks.map((link) => (
-                             <a key={link.href} href={link.href} onClick={(e) => { handleSmoothScroll(e); setIsOpen(false); }} className="text-white block px-4 py-3 rounded-md text-lg font-medium hover:bg-fire-gradient hover:text-black transition-all duration-200 w-full text-center">{link.label}</a>
+                             <a key={link.href} href={link.href} onClick={(e) => { handleSmoothScroll(e); setIsOpen(false); }} className="text-primary-yellow block px-4 py-3 rounded-md text-lg font-medium hover:bg-fire-gradient hover:text-black transition-all duration-200 w-full text-center">{link.label}</a>
                         ))}
                         <div className="flex items-center space-x-6 pt-6">
+                            {isShareSupported && (
+                                <button onClick={handleShare} type="button" aria-label="Share this page" className="transition-transform hover:scale-110 duration-300 p-3">
+                                   <ShareIcon className="h-8 w-8" />
+                                </button>
+                            )}
                             <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-white p-3 rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 transition-transform hover:scale-110 duration-300">
                                 <InstagramIcon />
                             </a>
