@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from './components/Header.tsx';
 import { Hero } from './components/Hero.tsx';
 import { Menu } from './components/Menu.tsx';
@@ -8,6 +8,8 @@ import { Footer } from './components/Footer.tsx';
 import { BackToTopButton } from './components/BackToTopButton.tsx';
 
 function App() {
+  const [isCateringModalOpen, setIsCateringModalOpen] = useState(false);
+
   return (
     <>
       <Header />
@@ -15,10 +17,10 @@ function App() {
         <Hero />
         <Menu />
         <Locations />
-        <Catering />
+        <Catering isModalOpen={isCateringModalOpen} setIsModalOpen={setIsCateringModalOpen} />
       </main>
       <Footer />
-      <BackToTopButton />
+      <BackToTopButton isCateringModalOpen={isCateringModalOpen} />
     </>
   );
 }

@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { SectionTitle } from './SectionTitle.tsx';
 import { CloseIcon } from './Icons.tsx';
 
-export const Catering = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+interface CateringProps {
+    isModalOpen: boolean;
+    setIsModalOpen: (isOpen: boolean) => void;
+}
+
+export const Catering = ({ isModalOpen, setIsModalOpen }: CateringProps) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',

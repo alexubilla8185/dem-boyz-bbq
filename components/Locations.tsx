@@ -4,7 +4,7 @@ import { InstagramIcon, FacebookIcon } from './Icons.tsx';
 import { SectionTitle } from './SectionTitle.tsx';
 
 export const Locations = () => (
-    <section id="locations" className="py-20 bg-neutral-900">
+    <section id="locations" className="py-20 bg-neutral-900 border-y border-accent-orange/20">
         <div className="container mx-auto px-4 text-center">
             <SectionTitle>Find Us</SectionTitle>
             <p className="text-2xl font-bold mb-2">We're a Restaurant on Wheels!</p>
