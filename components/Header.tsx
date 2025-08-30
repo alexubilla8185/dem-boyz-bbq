@@ -70,9 +70,9 @@ export const Header = () => {
                         <button
                             onClick={handleShare}
                             aria-label="Share this page"
-                            className="relative h-10 w-10 flex items-center justify-center transition-transform hover:scale-110 duration-300"
+                            className="relative h-10 w-10 flex items-center justify-center rounded-full bg-fire-gradient text-black transition-transform hover:scale-110 duration-300"
                         >
-                            <ShareIcon id="desktop-share" className="h-7 w-7" />
+                            <ShareIcon className="h-6 w-6" />
                             {shareStatus === 'copied' && (
                                 <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-neutral-800 text-white text-xs rounded py-1 px-2 pointer-events-none whitespace-nowrap">
                                     Link Copied!
@@ -103,9 +103,9 @@ export const Header = () => {
                              <button
                                 onClick={handleShare}
                                 aria-label="Share this page"
-                                className="relative text-white p-3 rounded-full bg-neutral-700 transition-transform hover:scale-110 duration-300"
+                                className="relative text-black p-3 rounded-full bg-fire-gradient transition-transform hover:scale-110 duration-300"
                             >
-                                <ShareIcon id="mobile-share" className="h-6 w-6" />
+                                <ShareIcon className="h-6 w-6" />
                             </button>
                         </div>
                     </div>

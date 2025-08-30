@@ -60,8 +60,8 @@ export const ClockIcon = () => (
     </svg>
 );
 
-export const ArrowUpIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+export const ArrowUpIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className || "h-6 w-6"} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
     </svg>
 );
@@ -85,17 +85,9 @@ export const DownloadIcon = ({ className, id }: { className?: string, id: string
     </svg>
 );
 
-export const ShareIcon = ({ className, id }: { className?: string, id: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" className={className || "h-6 w-6"} fill="none" viewBox="0 0 24 24" strokeWidth={2}>
-        <defs>
-            <linearGradient id={`fire-gradient-${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#FF8C00" />
-                <stop offset="50%" stopColor="#D62929" />
-                <stop offset="100%" stopColor="#FFEB3B" />
-            </linearGradient>
-        </defs>
+export const ShareIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className || "h-6 w-6"} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path 
-            stroke={`url(#fire-gradient-${id})`} 
             strokeLinecap="round" 
             strokeLinejoin="round" 
             d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.186 2.25 2.25 0 00-3.933 2.186z" 
