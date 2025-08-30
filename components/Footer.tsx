@@ -4,11 +4,14 @@ import { InstagramIcon, FacebookIcon, PhoneIcon, EmailIcon, ClockIcon } from './
 import { handleSmoothScroll } from '../utils/helpers.ts';
 
 export const Footer = () => (
-    <footer id="contact" className="bg-neutral-900 border-t-2 border-primary-red">
+    <footer id="contact" className="relative bg-neutral-900">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-fire-gradient"></div>
         <div className="container mx-auto px-4 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                 <div className="flex flex-col items-center md:items-start">
-                    <img src={logoUrl} alt="Dem Boyz BBQ" className="h-16 w-16 mb-4" />
+                    <div className="p-[2px] bg-fire-gradient rounded-full mb-4 inline-block">
+                        <img src={logoUrl} alt="Dem Boyz BBQ" className="h-16 w-16 rounded-full object-cover" />
+                    </div>
                     <h3 className="text-xl font-bold mb-4 text-primary-yellow">Dem Boyz BBQ</h3>
                     <p className="text-neutral-400">Southern Grillin' with an Island Twist</p>
                     <div className="flex space-x-4 mt-4">

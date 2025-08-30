@@ -23,11 +23,13 @@ export const Header = () => {
     ];
 
     return (
-        <header className={`sticky top-0 z-50 transition-all duration-300 border-b-2 border-primary-yellow ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'}`}>
+        <header className={`relative sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <a href="#" className="flex-shrink-0">
-                        <img className="h-16 w-auto" src={logoUrl} alt="Dem Boyz BBQ" />
+                        <div className="p-[2px] bg-fire-gradient rounded-full">
+                            <img className="h-16 w-16 rounded-full object-cover" src={logoUrl} alt="Dem Boyz BBQ" />
+                        </div>
                     </a>
                     <div className="hidden md:flex md:items-center md:space-x-8">
                         {navLinks.map((link) => (
@@ -66,6 +68,7 @@ export const Header = () => {
                     </div>
                 </div>
             )}
+             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-fire-gradient" />
         </header>
     );
 };
