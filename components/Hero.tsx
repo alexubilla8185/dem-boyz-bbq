@@ -1,6 +1,6 @@
 import React from 'react';
-import { logoUrl } from '@/data';
-import { handleSmoothScroll } from '@/utils/helpers';
+import { logoUrl } from '../data.ts';
+import { handleSmoothScroll } from '../utils/helpers.ts';
 
 export const Hero = () => (
     <section id="hero" className="h-screen flex items-center justify-center text-center bg-black" style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)", backgroundSize: "20px 20px" }}>

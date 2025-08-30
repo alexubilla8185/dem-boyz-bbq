@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { SectionTitle } from '@/components/SectionTitle';
-import { CloseIcon } from '@/components/Icons';
+import { SectionTitle } from './SectionTitle.tsx';
+import { CloseIcon } from './Icons.tsx';
 
 export const Catering = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -162,7 +162,7 @@ export const Catering = () => {
                         onClick={openModal}
                         className="mt-4 inline-block bg-fire-gradient text-black font-bold py-3 px-8 rounded-full text-lg uppercase transition-transform hover:scale-105 duration-300"
                     >
-                        Inquire About Catering
+                        Cater With Us
                     </button>
                 </div>
 

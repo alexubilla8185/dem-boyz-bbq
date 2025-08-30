@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { socialLinks, logoUrl } from '@/data';
-import { InstagramIcon, FacebookIcon, MenuIcon, CloseIcon } from '@/components/Icons';
-import { handleSmoothScroll } from '@/utils/helpers';
+import { socialLinks, logoUrl } from '../data.ts';
+import { InstagramIcon, FacebookIcon, MenuIcon, CloseIcon } from './Icons.tsx';
+import { handleSmoothScroll } from '../utils/helpers.ts';
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,7 @@ export const Header = () => {
     ];
 
     return (
-        <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent border-b border-primary-yellow/20'}`}>
+        <header className={`sticky top-0 z-50 transition-all duration-300 border-b-2 border-primary-yellow ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <a href="#" className="flex-shrink-0">

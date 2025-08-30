@@ -1,10 +1,10 @@
 import React from 'react';
-import { socialLinks, contactInfo, logoUrl } from '@/data';
-import { InstagramIcon, FacebookIcon, PhoneIcon, EmailIcon, ClockIcon } from '@/components/Icons';
-import { handleSmoothScroll } from '@/utils/helpers';
+import { socialLinks, contactInfo, logoUrl } from '../data.ts';
+import { InstagramIcon, FacebookIcon, PhoneIcon, EmailIcon, ClockIcon } from './Icons.tsx';
+import { handleSmoothScroll } from '../utils/helpers.ts';
 
 export const Footer = () => (
-    <footer id="contact" className="bg-neutral-900 border-t-4 border-primary-red">
+    <footer id="contact" className="bg-neutral-900 border-t-2 border-primary-red">
         <div className="container mx-auto px-4 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                 <div className="flex flex-col items-center md:items-start">

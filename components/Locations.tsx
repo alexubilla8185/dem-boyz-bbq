@@ -1,7 +1,7 @@
 import React from 'react';
-import { socialLinks, contactInfo } from '@/data';
-import { InstagramIcon, FacebookIcon } from '@/components/Icons';
-import { SectionTitle } from '@/components/SectionTitle';
+import { socialLinks, contactInfo } from '../data.ts';
+import { InstagramIcon, FacebookIcon } from './Icons.tsx';
+import { SectionTitle } from './SectionTitle.tsx';
 
 export const Locations = () => (
     <section id="locations" className="py-20 bg-neutral-900">

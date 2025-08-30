@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUpIcon } from '@/components/Icons';
+import { ArrowUpIcon } from './Icons.tsx';
 
 export const BackToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);

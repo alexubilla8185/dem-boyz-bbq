@@ -1,11 +1,11 @@
 import React from 'react';
-import { Header } from '@/components/Header';
-import { Hero } from '@/components/Hero';
-import { Menu } from '@/components/Menu';
-import { Locations } from '@/components/Locations';
-import { Catering } from '@/components/Catering';
-import { Footer } from '@/components/Footer';
-import { BackToTopButton } from '@/components/BackToTopButton';
+import { Header } from './components/Header.tsx';
+import { Hero } from './components/Hero.tsx';
+import { Menu } from './components/Menu.tsx';
+import { Locations } from './components/Locations.tsx';
+import { Catering } from './components/Catering.tsx';
+import { Footer } from './components/Footer.tsx';
+import { BackToTopButton } from './components/BackToTopButton.tsx';
 
 function App() {
   return (

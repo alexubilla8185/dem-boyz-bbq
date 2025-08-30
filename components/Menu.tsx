@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { menuItems } from '@/data';
-import { SectionTitle } from '@/components/SectionTitle';
-import { ChevronDownIcon } from '@/components/Icons';
+import { menuItems } from '../data.ts';
+import { SectionTitle } from './SectionTitle.tsx';
+import { ChevronDownIcon } from './Icons.tsx';
 
 export const Menu = () => {
     const [openCategoryIndex, setOpenCategoryIndex] = useState<number | null>(0);
