@@ -1,19 +1,9 @@
 import React from 'react';
 import { contactInfo } from '../data.ts';
 import { handleSmoothScroll } from '../utils/helpers.ts';
-import { PhoneIconForBar, BookOpenIcon, DocumentTextIcon } from './Icons.tsx';
+import { PhoneIconForBar, BookOpenIcon } from './Icons.tsx';
 
-interface MobileActionBarProps {
-    setIsCateringModalOpen: (isOpen: boolean) => void;
-}
-
-export const MobileActionBar = ({ setIsCateringModalOpen }: MobileActionBarProps) => {
-    
-    const handleCateringClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        setIsCateringModalOpen(true);
-    };
-
+export const MobileActionBar = () => {
     return (
         <div className="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-sm z-40 md:hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-fire-gradient"></div>
@@ -36,14 +26,6 @@ export const MobileActionBar = ({ setIsCateringModalOpen }: MobileActionBarProps
                         <BookOpenIcon />
                         <span className="text-xs font-medium">Our Menu</span>
                     </a>
-                    <button 
-                        onClick={handleCateringClick} 
-                        className="flex flex-col items-center text-center text-neutral-200 hover:text-primary-yellow transition-colors duration-200 p-2"
-                        aria-label="Inquire about catering"
-                    >
-                        <DocumentTextIcon />
-                        <span className="text-xs font-medium">Catering</span>
-                    </button>
                 </div>
             </div>
         </div>
