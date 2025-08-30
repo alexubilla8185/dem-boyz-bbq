@@ -6,7 +6,7 @@ import { handleSmoothScroll } from '../utils/helpers.ts';
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isShareSupported, setIsShareSupported] = useState(false);
+    const [shareStatus, setShareStatus] = useState<'idle' | 'copied'>('idle');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -14,26 +14,8 @@ export const Header = () => {
         };
         window.addEventListener('scroll', handleScroll);
         
-        if (navigator.share) {
-            setIsShareSupported(true);
-        }
-
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    const handleShare = async () => {
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: "Dem Boyz BBQ | Southern Grillin' with an Island Twist",
-                    text: "Check out Dem Boyz BBQ! View the menu, find their location, and inquire about catering.",
-                    url: window.location.origin
-                });
-            } catch (error) {
-                console.error('Share failed:', error);
-            }
-        }
-    };
 
     const navLinks = [
         { href: '#menu', label: 'Menu' },
@@ -41,6 +23,28 @@ export const Header = () => {
         { href: '#catering', label: 'Catering' },
         { href: '#contact', label: 'Contact' },
     ];
+
+    const handleShare = async () => {
+        const shareData = {
+            title: "Dem Boyz BBQ | Southern Grillin' with an Island Twist",
+            text: "Check out Dem Boyz BBQ! The best Southern Grillin' with an Island Twist.",
+            url: window.location.href,
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (error) {
+                console.error('Error sharing:', error);
+            }
+        } else {
+            // Fallback for browsers that don't support Web Share API
+            navigator.clipboard.writeText(window.location.href);
+            setShareStatus('copied');
+            setTimeout(() => setShareStatus('idle'), 2000);
+        }
+    };
+
 
     return (
         <header className={`relative sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'}`}>
@@ -57,22 +61,24 @@ export const Header = () => {
                         ))}
                     </div>
                     <div className="hidden md:flex items-center space-x-4">
-                         {isShareSupported && (
-                            <button
-                                onClick={handleShare}
-                                type="button"
-                                aria-label="Share this page"
-                                className="h-10 w-10 flex items-center justify-center transition-transform hover:scale-110 duration-300"
-                            >
-                                <ShareIcon id="desktop-share" />
-                            </button>
-                        )}
                         <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="h-10 w-10 flex items-center justify-center text-white rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 transition-transform hover:scale-110 duration-300">
                             <InstagramIcon />
                         </a>
                         <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="h-10 w-10 flex items-center justify-center text-white rounded-full bg-blue-600 transition-transform hover:scale-110 duration-300">
                             <FacebookIcon />
                         </a>
+                        <button
+                            onClick={handleShare}
+                            aria-label="Share this page"
+                            className="relative h-10 w-10 flex items-center justify-center transition-transform hover:scale-110 duration-300"
+                        >
+                            <ShareIcon id="desktop-share" className="h-7 w-7" />
+                            {shareStatus === 'copied' && (
+                                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-neutral-800 text-white text-xs rounded py-1 px-2 pointer-events-none whitespace-nowrap">
+                                    Link Copied!
+                                </span>
+                            )}
+                        </button>
                     </div>
                     <div className="md:hidden flex items-center">
                         <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-primary-yellow focus:outline-none">
@@ -88,17 +94,19 @@ export const Header = () => {
                              <a key={link.href} href={link.href} onClick={(e) => { handleSmoothScroll(e); setIsOpen(false); }} className="text-primary-yellow block px-4 py-3 rounded-md text-lg font-medium hover:bg-fire-gradient hover:text-black transition-all duration-200 w-full text-center">{link.label}</a>
                         ))}
                         <div className="flex items-center space-x-6 pt-6">
-                            {isShareSupported && (
-                                <button onClick={handleShare} type="button" aria-label="Share this page" className="transition-transform hover:scale-110 duration-300 p-3">
-                                   <ShareIcon className="h-8 w-8" id="mobile-share" />
-                                </button>
-                            )}
                             <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-white p-3 rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 transition-transform hover:scale-110 duration-300">
                                 <InstagramIcon />
                             </a>
                             <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-white p-3 rounded-full bg-blue-600 transition-transform hover:scale-110 duration-300">
                                 <FacebookIcon />
                             </a>
+                             <button
+                                onClick={handleShare}
+                                aria-label="Share this page"
+                                className="relative text-white p-3 rounded-full bg-neutral-700 transition-transform hover:scale-110 duration-300"
+                            >
+                                <ShareIcon id="mobile-share" className="h-6 w-6" />
+                            </button>
                         </div>
                     </div>
                 </div>

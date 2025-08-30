@@ -6,6 +6,7 @@ import { Locations } from './components/Locations.tsx';
 import { Catering } from './components/Catering.tsx';
 import { Footer } from './components/Footer.tsx';
 import { BackToTopButton } from './components/BackToTopButton.tsx';
+import { MobileActionBar } from './components/MobileActionBar.tsx';
 
 function App() {
   const [isCateringModalOpen, setIsCateringModalOpen] = useState(false);
@@ -21,6 +22,7 @@ function App() {
       </main>
       <Footer />
       <BackToTopButton isCateringModalOpen={isCateringModalOpen} />
+      <MobileActionBar setIsCateringModalOpen={setIsCateringModalOpen} />
     </>
   );
 }
