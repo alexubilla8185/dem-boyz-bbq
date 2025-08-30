@@ -44,7 +44,7 @@ export const Menu = () => {
     return (
         <section id="menu" className="py-20 bg-black">
             <div className="container mx-auto px-4">
-                <div className="flex justify-center items-center gap-x-3 mb-12">
+                <div className="flex justify-center items-baseline gap-x-3 mb-12">
                     <SectionTitle className="mb-0 leading-tight">Our Menu</SectionTitle>
                     <a
                         href="/menu.html"
