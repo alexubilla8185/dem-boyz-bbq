@@ -22,7 +22,7 @@ function App() {
       </main>
       <Footer />
       <BackToTopButton isCateringModalOpen={isCateringModalOpen} />
-      <MobileActionBar />
+      <MobileActionBar setIsCateringModalOpen={setIsCateringModalOpen} />
     </>
   );
 }

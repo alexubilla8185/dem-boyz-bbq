@@ -1,5 +1,5 @@
 import React from 'react';
-import { logoUrl } from '../data.ts';
+import { logoUrl, contactInfo } from '../data.ts';
 import { handleSmoothScroll } from '../utils/helpers.ts';
 
 export const Hero = () => (
@@ -10,9 +10,14 @@ export const Hero = () => (
             </div>
             <h1 className="text-5xl md:text-6xl font-black uppercase mt-4 text-glow text-primary-yellow">Dem Boyz BBQ</h1>
             <p className="text-xl md:text-2xl mt-2 font-semibold bg-fire-gradient text-transparent bg-clip-text">Southern Grillin' with an Island Twist</p>
-            <a href="#menu" onClick={handleSmoothScroll} className="mt-6 inline-block bg-fire-gradient text-black font-bold py-3 px-8 rounded-full text-lg uppercase transition-transform hover:scale-105 duration-300">
-                View Our Menu
-            </a>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
+                <a href="#menu" onClick={handleSmoothScroll} className="w-full sm:w-auto text-center bg-fire-gradient text-black font-bold py-3 px-8 rounded-full text-lg uppercase transition-transform hover:scale-105 duration-300">
+                    View Our Menu
+                </a>
+                <a href={`tel:${contactInfo.phone.replace(/\D/g, '')}`} className="w-full sm:w-auto text-center border-2 border-primary-yellow text-primary-yellow font-bold py-3 px-8 rounded-full text-lg uppercase transition-all duration-300 hover:bg-primary-yellow hover:text-black">
+                    Call to Order
+                </a>
+            </div>
         </div>
     </section>
 );
