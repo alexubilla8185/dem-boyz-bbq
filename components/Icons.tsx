@@ -17,26 +17,26 @@ export const FacebookIcon = () => (
 export const MenuIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={2}>
         <defs>
-            <linearGradient id="fire-gradient-icon" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id="fire-gradient-menu-icon" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#FF8C00" />
                 <stop offset="50%" stopColor="#D62929" />
                 <stop offset="100%" stopColor="#FFEB3B" />
             </linearGradient>
         </defs>
-        <path stroke="url(#fire-gradient-icon)" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+        <path stroke="url(#fire-gradient-menu-icon)" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
     </svg>
 );
 
 export const CloseIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={2}>
         <defs>
-            <linearGradient id="fire-gradient-icon" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id="fire-gradient-close-icon" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#FF8C00" />
                 <stop offset="50%" stopColor="#D62929" />
                 <stop offset="100%" stopColor="#FFEB3B" />
             </linearGradient>
         </defs>
-        <path stroke="url(#fire-gradient-icon)" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        <path stroke="url(#fire-gradient-close-icon)" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
 );
 
@@ -69,5 +69,18 @@ export const ArrowUpIcon = () => (
 export const ChevronDownIcon = ({ className }: { className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className || "h-6 w-6"} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+);
+
+export const DownloadIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className || "h-5 w-5"} fill="none" viewBox="0 0 24 24" strokeWidth={2}>
+        <defs>
+            <linearGradient id="fire-gradient-download-icon" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#FF8C00" />
+                <stop offset="50%" stopColor="#D62929" />
+                <stop offset="100%" stopColor="#FFEB3B" />
+            </linearGradient>
+        </defs>
+        <path stroke="url(#fire-gradient-download-icon)" strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
     </svg>
 );

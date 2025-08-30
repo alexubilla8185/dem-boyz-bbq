@@ -33,7 +33,7 @@ export const Header = () => {
                     </a>
                     <div className="hidden md:flex md:items-center md:space-x-8">
                         {navLinks.map((link) => (
-                            <a key={link.href} href={link.href} onClick={handleSmoothScroll} className="text-white hover:text-primary-yellow transition-colors duration-300 font-semibold">{link.label}</a>
+                            <a key={link.href} href={link.href} onClick={handleSmoothScroll} className="text-primary-yellow hover:text-white transition-colors duration-300 font-semibold">{link.label}</a>
                         ))}
                     </div>
                     <div className="hidden md:flex items-center space-x-4">

@@ -13,7 +13,7 @@ export const Footer = () => (
                         <img src={logoUrl} alt="Dem Boyz BBQ" className="h-16 w-16 rounded-full object-cover" />
                     </div>
                     <h3 className="text-xl font-bold mb-4 text-primary-yellow">Dem Boyz BBQ</h3>
-                    <p className="text-neutral-400">Southern Grillin' with an Island Twist</p>
+                    <p className="text-neutral-200">Southern Grillin' with an Island Twist</p>
                     <div className="flex space-x-4 mt-4">
                         <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-white p-2 rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 transition-transform hover:scale-110 duration-300">
                             <InstagramIcon />
@@ -24,29 +24,29 @@ export const Footer = () => (
                     </div>
                 </div>
                 <div>
-                    <h3 className="text-xl font-bold mb-4 text-white">Contact Us</h3>
-                    <ul className="space-y-2 text-neutral-400">
+                    <h3 className="text-xl font-bold mb-4 bg-fire-gradient text-transparent bg-clip-text inline-block">Contact Us</h3>
+                    <ul className="space-y-2 text-neutral-200">
                         <li className="transition-colors duration-300 hover:text-white">
                             <a href={`tel:${contactInfo.phone}`} className="inline-flex items-center justify-center md:justify-start">
-                                <PhoneIcon />
+                                <span className="text-primary-yellow"><PhoneIcon /></span>
                                 <span>{contactInfo.phone}</span>
                             </a>
                         </li>
                         <li className="transition-colors duration-300 hover:text-white">
                             <a href={`mailto:${contactInfo.email}`} className="inline-flex items-center justify-center md:justify-start">
-                                <EmailIcon />
+                                <span className="text-primary-yellow"><EmailIcon /></span>
                                 <span>{contactInfo.email}</span>
                             </a>
                         </li>
                         <li className="flex items-center justify-center md:justify-start">
-                            <ClockIcon />
+                            <span className="text-primary-yellow"><ClockIcon /></span>
                             <span>{contactInfo.hours}</span>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
-                    <ul className="space-y-2 text-neutral-400">
+                    <h3 className="text-xl font-bold mb-4 bg-fire-gradient text-transparent bg-clip-text inline-block">Quick Links</h3>
+                    <ul className="space-y-2 text-neutral-200">
                         <li><a href="#menu" onClick={handleSmoothScroll} className="hover:text-primary-yellow">Menu</a></li>
                         <li><a href="#locations" onClick={handleSmoothScroll} className="hover:text-primary-yellow">Locations</a></li>
                         <li><a href="#catering" onClick={handleSmoothScroll} className="hover:text-primary-yellow">Catering</a></li>

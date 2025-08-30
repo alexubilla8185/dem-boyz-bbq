@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { menuItems } from '../data.ts';
 import { SectionTitle } from './SectionTitle.tsx';
-import { ChevronDownIcon } from './Icons.tsx';
+import { ChevronDownIcon, DownloadIcon } from './Icons.tsx';
 
 export const Menu = () => {
     const [openCategoryIndex, setOpenCategoryIndex] = useState<number | null>(0);
 
-    const handleToggle = (index: number) => {
+    const handleToggle = (e: React.MouseEvent<HTMLButtonElement>, index: number) => {
+        e.preventDefault();
         setOpenCategoryIndex(openCategoryIndex === index ? null : index);
     };
 
@@ -20,7 +21,19 @@ export const Menu = () => {
     return (
         <section id="menu" className="py-20 bg-black">
             <div className="container mx-auto px-4">
-                <SectionTitle>Our Menu</SectionTitle>
+                <div className="flex justify-center items-center gap-x-3 mb-12">
+                    <SectionTitle className="mb-0">Our Menu</SectionTitle>
+                    <a
+                        href="/menu.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Download Menu"
+                        className="text-neutral-400 hover:text-primary-yellow transition-transform hover:scale-110 duration-300"
+                    >
+                        <DownloadIcon className="h-7 w-7" />
+                    </a>
+                </div>
+
                 <div className="space-y-8">
                     {menuItems.map((category, index) => {
                         const isOpen = openCategoryIndex === index;
@@ -30,7 +43,7 @@ export const Menu = () => {
                                 className={`bg-neutral-900 rounded-xl border-2 shadow-lg shadow-black/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${categoryCardStyles[index % categoryCardStyles.length]}`}
                             >
                                 <button
-                                    onClick={() => handleToggle(index)}
+                                    onClick={(e) => handleToggle(e, index)}
                                     className="w-full flex justify-between items-center text-left p-6 sm:p-8"
                                     aria-expanded={isOpen}
                                     aria-controls={`category-content-${index}`}

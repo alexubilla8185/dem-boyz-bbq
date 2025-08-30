@@ -115,34 +115,29 @@ export const Catering = ({ isModalOpen, setIsModalOpen }: CateringProps) => {
         if (validateForm()) {
             setSubmissionStatus('submitting');
             const { captcha, ...formDataForSubmission } = formData;
+            
             const encode = (data: { [key: string]: any }) => {
                 return Object.keys(data)
                     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
                     .join("&");
             };
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 5000);
 
             try {
                 const response = await fetch("/", {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: encode({ "form-name": "catering-inquiries", ...formDataForSubmission }),
-                    signal: controller.signal,
                 });
-                clearTimeout(timeoutId);
-                if (response.ok) setSubmissionStatus('success');
-                else throw new Error(`Form submission failed with status: ${response.status}`);
-            } catch (error: any) {
-                clearTimeout(timeoutId);
-                if (error.name === 'AbortError') {
-                    console.log("--- CATERING FORM TEST SUBMISSION (SIMULATED) ---");
-                    console.log("Form data:", formDataForSubmission);
+
+                if (response.ok) {
                     setSubmissionStatus('success');
                 } else {
-                    console.error("Form submission error:", error);
+                    console.error("Form submission failed:", response.status);
                     setSubmissionStatus('error');
                 }
+            } catch (error) {
+                console.error("Form submission error:", error);
+                setSubmissionStatus('error');
             }
         }
     };

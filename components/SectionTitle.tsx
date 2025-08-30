@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-    <h2 className="text-3xl md:text-4xl font-black text-center uppercase text-glow mb-10">{children}</h2>
+export const SectionTitle = ({ children, className }: { children: React.ReactNode, className?: string }) => (
+    <h2 className={`text-4xl sm:text-5xl font-bold text-center uppercase mb-12 bg-fire-gradient text-transparent bg-clip-text ${className || ''}`}>{children}</h2>
 );
