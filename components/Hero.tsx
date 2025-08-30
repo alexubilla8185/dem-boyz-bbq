@@ -3,7 +3,7 @@ import { logoUrl, contactInfo } from '../data.ts';
 import { handleSmoothScroll } from '../utils/helpers.ts';
 
 export const Hero = () => (
-    <section id="hero" className="h-screen flex items-center justify-center text-center bg-black pb-24 md:pb-0" style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)", backgroundSize: "20px 20px" }}>
+    <section id="hero" className="h-screen flex items-center justify-center text-center bg-black pb-28 md:pb-0" style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)", backgroundSize: "20px 20px" }}>
         <div className="container mx-auto px-4 flex flex-col items-center">
             <div className="relative inline-block mx-auto p-[2px] bg-fire-gradient rounded-full">
                  <img src={logoUrl} alt="Dem Boyz BBQ Logo - Southern Grillin' with an Island Twist" className="h-56 w-56 md:h-80 md:w-80 rounded-full object-cover" />
