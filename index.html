@@ -1,0 +1,155 @@
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1"
+  }
+}
+</script>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dem Boyz BBQ | Southern Grillin' with an Island Twist</title>
+    <meta name="description" content="Explore the official menu for Dem Boyz BBQ, a food truck serving Southern Grillin' with an Island Twist. Find our daily locations and inquire about our full-service catering for your next event." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dem Boyz BBQ | Southern Grillin' with an Island Twist">
+    <meta property="og:description" content="The official website for Dem Boyz BBQ, a restaurant on wheels. View our menu, find our location, and inquire about catering.">
+    <meta property="og:image" content="https://i.ibb.co/dKqV9yv/dem-boyz-bbq-logo.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Dem Boyz BBQ | Southern Grillin' with an Island Twist">
+    <meta property="twitter:description" content="The official website for Dem Boyz BBQ, a restaurant on wheels. View our menu, find our location, and inquire about catering.">
+    <meta property="twitter:image" content="https://i.ibb.co/dKqV9yv/dem-boyz-bbq-logo.jpg">
+
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co/7tB56Bgv/demboyzbbq.jpg" />
+    <link rel="apple-touch-icon" href="https://i.ibb.co/7tB56Bgv/demboyzbbq.jpg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-red': '#D62929',
+              'primary-yellow': '#FFEB3B',
+              'accent-orange': '#FF8C00',
+              'accent-green': '#2E8B57',
+            },
+            backgroundImage: {
+              'fire-gradient': 'linear-gradient(to right, #FF8C00, #D62929, #FFEB3B)',
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+        .text-glow {
+            text-shadow: 0 0 8px theme('colors.primary-yellow'), 0 0 20px rgba(255, 235, 59, 0.5);
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "FoodTruck",
+          "name": "Dem Boyz BBQ",
+          "image": "https://i.ibb.co/7tB56Bgv/demboyzbbq.jpg",
+          "description": "Dem Boyz BBQ is a restaurant on wheels serving Southern Grillin' with an Island Twist. We offer a full menu of smoked meats, sides, and catering services.",
+          "telephone": "(561) 380-4452",
+          "email": "demboyzbbq@gmail.com",
+          "servesCuisine": ["BBQ", "Southern", "Caribbean"],
+          "hasMenu": {
+            "@type": "Menu",
+            "name": "Dem Boyz BBQ Menu",
+            "url": "#menu"
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "13:00"
+          },
+          "sameAs": [
+            "https://www.instagram.com/demboyz_bbq/",
+            "https://www.facebook.com/DemBoyzBBQ1/"
+          ]
+        },
+        {
+          "@type": "Menu",
+          "name": "Dem Boyz BBQ Menu",
+          "inLanguage": "en-US",
+          "hasMenuSection": [
+            {
+              "@type": "MenuSection",
+              "name": "Dinners & Entrees",
+              "description": "Dinners are Served With (2) sides.",
+              "hasMenuItem": [
+                {
+                  "@type": "MenuItem",
+                  "name": "Smoked Wings",
+                  "description": "Choice of: DBB Sauce, Carolina Tangy Gold, Sweet Heat, or Honey Hot.",
+                  "offers": [
+                    { "@type": "Offer", "name": "Dinner", "price": "16.99", "priceCurrency": "USD" },
+                    { "@type": "Offer", "name": "Entree", "price": "8.99", "priceCurrency": "USD" }
+                  ]
+                },
+                {
+                  "@type": "MenuItem",
+                  "name": "Pork Ribs",
+                  "description": "Slow-smoked, fall-off-the-bone tender ribs.",
+                  "offers": [
+                    { "@type": "Offer", "name": "Dinner", "price": "17.99", "priceCurrency": "USD" },
+                    { "@type": "Offer", "name": "Entree", "price": "11.99", "priceCurrency": "USD" }
+                  ]
+                }
+              ]
+            },
+            {
+              "@type": "MenuSection",
+              "name": "Sides",
+              "hasMenuItem": [
+                {
+                  "@type": "MenuItem",
+                  "name": "Macaroni & Cheese",
+                  "offers": { "@type": "Offer", "price": "4.99", "priceCurrency": "USD" }
+                },
+                {
+                  "@type": "MenuItem",
+                  "name": "Sweet Potato Casserole",
+                  "offers": { "@type": "Offer", "price": "4.99", "priceCurrency": "USD" }
+                }
+              ]
+            },
+             {
+              "@type": "MenuSection",
+              "name": "Desserts",
+              "hasMenuItem": [
+                {
+                  "@type": "MenuItem",
+                  "name": "Red Velvet",
+                  "description": "A slice of classic red velvet cake with cream cheese frosting.",
+                  "offers": { "@type": "Offer", "price": "6.00", "priceCurrency": "USD" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
