@@ -30,7 +30,7 @@ export const Menu = () => {
                         aria-label="Download Menu"
                         className="text-neutral-400 hover:text-primary-yellow transition-transform hover:scale-110 duration-300"
                     >
-                        <DownloadIcon className="h-7 w-7" />
+                        <DownloadIcon className="h-7 w-7" id="menu-download" />
                     </a>
                 </div>
 

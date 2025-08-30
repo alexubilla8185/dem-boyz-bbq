@@ -183,7 +183,8 @@ export const Catering = ({ isModalOpen, setIsModalOpen }: CateringProps) => {
                                     className="absolute top-4 right-4 text-neutral-500 hover:text-white transition-colors z-10 p-1"
                                     aria-label="Close catering form"
                                 >
-                                    <CloseIcon />
+                                    {/* FIX: Added missing id prop to CloseIcon */}
+                                    <CloseIcon id="catering-close" />
                                 </button>
                                 
                                 {submissionStatus === 'success' ? (

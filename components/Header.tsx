@@ -64,7 +64,7 @@ export const Header = () => {
                                 aria-label="Share this page"
                                 className="h-10 w-10 flex items-center justify-center transition-transform hover:scale-110 duration-300"
                             >
-                                <ShareIcon />
+                                <ShareIcon id="desktop-share" />
                             </button>
                         )}
                         <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="h-10 w-10 flex items-center justify-center text-white rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 transition-transform hover:scale-110 duration-300">
@@ -76,7 +76,7 @@ export const Header = () => {
                     </div>
                     <div className="md:hidden flex items-center">
                         <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-primary-yellow focus:outline-none">
-                            {isOpen ? <CloseIcon /> : <MenuIcon />}
+                            {isOpen ? <CloseIcon id="mobile-close" /> : <MenuIcon id="mobile-open" />}
                         </button>
                     </div>
                 </div>
@@ -90,7 +90,7 @@ export const Header = () => {
                         <div className="flex items-center space-x-6 pt-6">
                             {isShareSupported && (
                                 <button onClick={handleShare} type="button" aria-label="Share this page" className="transition-transform hover:scale-110 duration-300 p-3">
-                                   <ShareIcon className="h-8 w-8" />
+                                   <ShareIcon className="h-8 w-8" id="mobile-share" />
                                 </button>
                             )}
                             <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-white p-3 rounded-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 transition-transform hover:scale-110 duration-300">

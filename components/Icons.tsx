@@ -14,29 +14,29 @@ export const FacebookIcon = ({ className }: { className?: string }) => (
     </svg>
 );
 
-export const MenuIcon = () => (
+export const MenuIcon = ({ id }: { id: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={2}>
         <defs>
-            <linearGradient id="fire-gradient-menu-icon" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id={`fire-gradient-${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#FF8C00" />
                 <stop offset="50%" stopColor="#D62929" />
                 <stop offset="100%" stopColor="#FFEB3B" />
             </linearGradient>
         </defs>
-        <path stroke="url(#fire-gradient-menu-icon)" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+        <path stroke={`url(#fire-gradient-${id})`} strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
     </svg>
 );
 
-export const CloseIcon = () => (
+export const CloseIcon = ({ id }: { id: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={2}>
         <defs>
-            <linearGradient id="fire-gradient-close-icon" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id={`fire-gradient-${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#FF8C00" />
                 <stop offset="50%" stopColor="#D62929" />
                 <stop offset="100%" stopColor="#FFEB3B" />
             </linearGradient>
         </defs>
-        <path stroke="url(#fire-gradient-close-icon)" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        <path stroke={`url(#fire-gradient-${id})`} strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
 );
 
@@ -72,28 +72,28 @@ export const ChevronDownIcon = ({ className }: { className?: string }) => (
     </svg>
 );
 
-export const DownloadIcon = ({ className }: { className?: string }) => (
+export const DownloadIcon = ({ className, id }: { className?: string, id: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className || "h-5 w-5"} fill="none" viewBox="0 0 24 24" strokeWidth={2}>
         <defs>
-            <linearGradient id="fire-gradient-download-icon" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id={`fire-gradient-${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#FF8C00" />
                 <stop offset="50%" stopColor="#D62929" />
                 <stop offset="100%" stopColor="#FFEB3B" />
             </linearGradient>
         </defs>
-        <path stroke="url(#fire-gradient-download-icon)" strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        <path stroke={`url(#fire-gradient-${id})`} strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
     </svg>
 );
 
-export const ShareIcon = ({ className }: { className?: string }) => (
+export const ShareIcon = ({ className, id }: { className?: string, id: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className || "h-6 w-6"} fill="none" viewBox="-1 -1 26 26" strokeWidth={2}>
         <defs>
-            <linearGradient id="fire-gradient-share-icon" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id={`fire-gradient-${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#FF8C00" />
                 <stop offset="50%" stopColor="#D62929" />
                 <stop offset="100%" stopColor="#FFEB3B" />
             </linearGradient>
         </defs>
-        <path stroke="url(#fire-gradient-share-icon)" strokeLinecap="round" strokeLinejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 5.314l9.566 5.314m0 0a2.25 2.25 0 100-2.186m0 2.186c-.18.324-.283.696-.283 1.093s.103.77.283 1.093m0-2.186l-9.566-5.314" />
+        <path stroke={`url(#fire-gradient-${id})`} strokeLinecap="round" strokeLinejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 5.314l9.566 5.314m0 0a2.25 2.25 0 100-2.186m0 2.186c-.18.324-.283.696-.283 1.093s.103.77.283 1.093m0-2.186l-9.566-5.314" />
     </svg>
 );
