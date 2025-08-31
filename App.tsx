@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header.tsx';
-import { Hero } from './components/Hero.tsx';
-import { Menu } from './components/Menu.tsx';
-import { Locations } from './components/Locations.tsx';
-import { Catering } from './components/Catering.tsx';
 import { Footer } from './components/Footer.tsx';
 import { BackToTopButton } from './components/BackToTopButton.tsx';
 import { MobileActionBar } from './components/MobileActionBar.tsx';
+import { HomePage } from './pages/HomePage.tsx';
 
 function App() {
   const [isCateringModalOpen, setIsCateringModalOpen] = useState(false);
@@ -15,10 +13,10 @@ function App() {
     <>
       <Header />
       <main>
-        <Hero />
-        <Menu />
-        <Locations />
-        <Catering isModalOpen={isCateringModalOpen} setIsModalOpen={setIsCateringModalOpen} />
+        <Routes>
+          <Route path="/" element={<HomePage isCateringModalOpen={isCateringModalOpen} setIsCateringModalOpen={setIsCateringModalOpen} />} />
+          {/* Add other routes here in the future, e.g. <Route path="/gallery" element={<GalleryPage />} /> */}
+        </Routes>
       </main>
       <Footer />
       <BackToTopButton isCateringModalOpen={isCateringModalOpen} />
