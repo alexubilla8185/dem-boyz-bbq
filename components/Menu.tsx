@@ -44,17 +44,19 @@ export const Menu = () => {
     return (
         <section id="menu" className="py-20 bg-black">
             <div className="container mx-auto px-4">
-                <div className="flex justify-center items-baseline gap-x-3 mb-12">
+                <div className="flex justify-center items-baseline gap-x-4 mb-12">
                     <SectionTitle className="mb-0 leading-tight">Our Menu</SectionTitle>
-                    <a
-                        href="/menu.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Download Menu"
-                        className="text-neutral-400 hover:text-primary-yellow transition-transform hover:scale-110 duration-300"
-                    >
-                        <DownloadIcon className="h-7 w-7" id="menu-download" />
-                    </a>
+                    <div className="p-[2px] bg-fire-gradient rounded-full transition-transform hover:scale-110 duration-300">
+                        <a
+                            href="/menu.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Download Menu"
+                            className="block p-2 bg-neutral-900 rounded-full"
+                        >
+                            <DownloadIcon className="h-6 w-6" id="menu-download" />
+                        </a>
+                    </div>
                 </div>
 
                 {isLoading ? (
